@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Life Saga - 暗影王座 (3D)</title>
+    <meta name="description" content="360° view of the Shadow Throne">
+    <!-- 核心修改 1: 引入A-Frame框架 -->
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+    <!-- 核心修改 2: 创建A-Frame 3D场景 -->
+    <a-scene>
+        <!-- 
+            核心修改 3: 加载360度全景背景图
+            请将 `src` 替换为您自己的“暗影王座”360度图片URL
+        -->
+        <a-sky src="https://i.postimg.cc/RVSnFky2/3d.png"></a-sky>
+
+        <!--
+            核心修改 4: 加载您的3D“附魔师”模型
+            - 请将 `src` 替换为您上传.glb文件后获得的URL
+            - `position`: 控制模型在场景中的位置 (x y z)
+            - `scale`: 控制模型的大小
+            - `rotation`: 控制模型的旋转角度
+            请您根据需要在下方修改这些数值
+        -->
+        <a-gltf-model 
+            src="https://raw.githubusercontent.com/ryan-lele/3d-assets/main/fumoshi.glb"
+            position="0 -1.5 -2"
+            scale="30 30 30"
+            rotation="0 0 0"
+        ></a-gltf-model>
+
+        <!-- 核心修改 5: 为场景添加基础光照，否则模型可能是黑的 -->
+        <a-light type="ambient" color="#888"></a-light>
+        <a-light type="point" intensity="0.5" position="2 4 4"></a-light>
+
+    </a-scene>
+</body>
+</html>
